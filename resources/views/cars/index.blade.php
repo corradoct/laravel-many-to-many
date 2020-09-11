@@ -4,24 +4,24 @@
 
   <h1>Cars list</h1>
   <div>
-    <a href="{{route('cars.create')}}">Add new car</a>
+    <a class="new" href="{{route('cars.create')}}">Add new car</a>
   </div>
-  <br>
-  <br>
-  @foreach ($cars as $car)
-    <div>
-      <a href="{{ route('cars.show', $car) }}" >{{$car->manifacturer}} {{ $car->engine}}</a>
-      <a href="{{ route('cars.edit', $car) }}">Modifica</a>
-      <form action="{{ route('cars.destroy', $car) }}" method="post">
-      @csrf
-      @method('DELETE')
+  <div class="cont_flex">
+    @foreach ($cars as $car)
+      <div>
+        <h3>
+          <a href="{{ route('cars.show', $car) }}" >{{$car->manifacturer}} {{ $car->engine}}</a>
+        </h3>
+        <a class="edit" href="{{ route('cars.edit', $car) }}">Modifica</a>
+        <form class="delete" action="{{ route('cars.destroy', $car) }}" method="post">
+        @csrf
+        @method('DELETE')
+          <input type="submit" value="Elimina">
+        </form>
+      </div>
+    @endforeach
+  </div>
 
-        <input type="submit" value="Elimina">
-
-      </form>
-    </div>
-  @endforeach
-
-  <a href="/">Home</a>
+  <a href="/">--> Vai alla home <--</a>
 
 @endsection

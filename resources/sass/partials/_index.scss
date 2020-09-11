@@ -1,0 +1,31 @@
+a.new {
+  background-color: lightgreen;
+  color: $colorText;
+  border: $border;
+}
+
+.cont_flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  div {
+    flex-basis: 250px;
+
+    a.edit {
+      background-color: yellow;
+      color: $colorText;
+      text-transform: capitalize;
+      border: $border;
+    }
+
+    .delete input {
+      background-color: red;
+      font-family: $fontFamily;
+      font-weight: 600;
+      letter-spacing: .1rem;
+      margin: 25px 0;
+    }
+  }
+}
