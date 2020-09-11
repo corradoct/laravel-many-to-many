@@ -46,6 +46,10 @@ a {
   margin-bottom: 30px;
 }
 
+.blue {
+  color: blue;
+}
+
 a.new {
   background-color: lightgreen;
   color: black;
